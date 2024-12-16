@@ -1,14 +1,8 @@
 # Heightmap
 
-Since Blender 4.2.0, all our addons are bundled as extensions, which is a wrapper for addons and themes. You can install them analog to normal addons.
+The T. S. Heightmap addon is used for creating the terrain geometry and ground texture. In most cases this is the first part of the environment creation, because you can define the basic layout of your scene. The addon uses a non-distructive workflow, which means you can change the change / delete settings at any given state.
 
-In the following chapters we will go through the installation and setup, So you can use the addon properly
-
-## Installation
-
-after you purchased the product, you need to download the "... \_extension.zip" file, in order to install the extension, you need to use blender version 4.2.0+.
-
-With Blender open. you can install the extension under edit -> preferences -> get extenstions -> install from dist (dropdown menu on the top right corner) -> select the downloaded \_extension.zip file.
+The addon comes with a wide range of premade heightmaps, which you can be stacked ontop of each other. This enables a very fast workflow, because the erosion and other properties are already contained by the heightmaps and dont need to be calculated. Furthermore Masks can be added for custom control of the heightmaps.
 
 ## Setup
 
