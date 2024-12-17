@@ -283,6 +283,16 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#edit-terrain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Terrain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Terrain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#using-heightmaps" class="md-nav__link">
     <span class="md-ellipsis">
       Using heightmaps
@@ -290,13 +300,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#using-masks" class="md-nav__link">
     <span class="md-ellipsis">
       Using Masks
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -420,6 +435,16 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#edit-terrain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Terrain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Terrain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#using-heightmaps" class="md-nav__link">
     <span class="md-ellipsis">
       Using heightmaps
@@ -427,13 +452,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#using-masks" class="md-nav__link">
     <span class="md-ellipsis">
       Using Masks
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -480,7 +510,7 @@
 
 
 <h1 id="heightmap">Heightmap</h1>
-<p>The T. S. Heightmap addon is used for creating the terrain geometry and ground texture. In most cases this is the first part of the environment creation, because you can define the basic layout of your scene. The addon uses a non-distructive workflow, which means you can change the change / delete settings at any given state.</p>
+<p>The T. S. Heightmap addon is used for creating the terrain geometry and ground texture. In most cases this is the first part of the environment creation, because you can define the basic layout of your scene. The addon uses a non-distructive workflow, which means you can change / delete settings at any given state.</p>
 <p>The addon comes with a wide range of premade heightmaps, which you can be stacked ontop of each other. This enables a very fast workflow, because the erosion and other properties are already contained by the heightmaps and dont need to be calculated. Furthermore Masks can be added for custom control of the heightmaps.</p>
 <h2 id="setup">Setup</h2>
 <p>In order to use the addon properly, you need to add a catalog of heightmaps, which can then be added to your terrain.</p>
@@ -495,17 +525,50 @@
         ...
     ...
 </code></pre>
-<p>There is a premade catalog available with this product with an extensive range of different heightmaps, but you can also create your own catalog containing your custom heightmaps using this structure.</p>
+<p>There is a premade catalog available with this product, containing an extensive range of different heightmaps, but you can also create your own catalog containing your custom heightmaps using this structure.</p>
+<p>After adding such catalog, you can see the heightmaps and categories listed in the preferences window.</p>
+<p><img alt="Masks" src="images/setup.png" /></p>
 <h2 id="adding-terrain">Adding Terrain</h2>
-<h2 id="using-heightmaps">Using heightmaps</h2>
-<h2 id="using-masks">Using Masks</h2>
-<p>You can add masks for the whole terrain or for a specific heightmap. The mask is a texture containing values from 0 - 1.</p>
-<p>Here is a overview of the different masks:</p>
+<p>After installing and setup the addon properly, you should see the heightmap panel when pressing "n" in the 3d-viewport.</p>
+<p>By clicking the "Add Terrain" button, a new terrain gets created, you can work with. You can create multiple terrains in one scene. With a terrain selected as terrain, you can now modify it.</p>
+<p><img alt="Masks" src="images/add-terrain.png" /></p>
+<h2 id="edit-terrain">Edit Terrain</h2>
+<p>Under the "Edit Terrain" Section, you can manage the heightmaps and masks used by the terrain.</p>
+<p>Notice that you need to enable the editmode by clicking the button, in order to be able to add / remove heightmaps</p>
+<p><img alt="Masks" src="images/edit-terrain.png" /></p>
+<h3 id="using-heightmaps">Using heightmaps</h3>
+<p>You manage the heightmaps using the buttons on the right side of the list</p>
+<p><img alt="Masks" src="images/heightmap-list.png" /></p>
+<p>When adding a heightmap, you can choose between a heightmap using the added catalogs or you can use a custom path to an heightmap</p>
+<p>Catalog:</p>
+<p><img alt="Masks" src="images/heightmap-catalog.png" /></p>
+<p>Custom Path:</p>
+<p><img alt="Masks" src="images/custom-heightmap.png" /></p>
+<p>After Adding multiple heightmaps, you can change its properties by selecting the heightmap.</p>
+<p><img alt="Masks" src="images/heightmap-properties.png" /></p>
+<h3 id="using-masks">Using Masks</h3>
+<p>You can add masks for the whole terrain or for specific heightmaps. The mask is a texture containing values from 0 - 1, controlling the height (Intensity) of the heightmap.</p>
+<p>Here is an overview of the different masks:</p>
 <p><img alt="Masks" src="images/masks.png" /></p>
-<p>Those masks can be used for</p>
+<p>Those masks are especially helpful for terrains with rivers or lakes.</p>
+<p><img alt="Masks" src="images/lake-terrain.jpg" /></p>
+<p><img alt="Masks" src="images/river-terrain.jpg" /></p>
 <h2 id="performence">Performence</h2>
+<p>When dealing with large scale terrains, it might effect the performence of you scene, because to many geometry is drawn.</p>
+<p>For this reasen, the terrain uses an lod system, which loads lots of detail close to the active camera and then decreases in resolution further from the camera. This gives the viewer the illusion of a large high detail terrain.</p>
+<p><img alt="Masks" src="images/lod.png" /></p>
+<p><img alt="Masks" src="images/lod-view.png" /></p>
+<p>Of course you can adjust the lod-depth (number of detail increading steps around the camera), and the subdivisions used in the viewport and rendered view.</p>
+<p><img alt="Masks" src="images/geo-subd.png" /></p>
 <h2 id="texturing">Texturing</h2>
+<p>The terrain uses a material, which can easily be adjusted using the "Shader" panel.</p>
+<p><img alt="Masks" src="images/terrain-shader.png" /></p>
 <h2 id="scaling">Scaling</h2>
+<p>Very important to notice is that you cant scale the terrain like other object using the "s" shortcut, becauses this messes up the shader used by the material. this results in artifacs and other problems:</p>
+<p><img alt="Masks" src="images/scaling-artifacs.png" /></p>
+<p>Instead you need to use the scaling property under the geometry section "geometry scale".</p>
+<p><img alt="Masks" src="images/geo-scale.png" /></p>
+<p><img alt="Masks" src="images/proper-scaling.png" /></p>
 
 
 
